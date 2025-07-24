@@ -3,227 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Page</title>
+    <title>G. Aman - Profile</title>
     <link href="https://fonts.googleapis.com/css2?family=Overlock:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #6200EE; /* Deep Purple */
-            --primary-dark: #3700B3;
-            --accent-color: #03DAC6; /* Teal */
-            --background-color: #F5F5F5; /* Light Grey */
-            --surface-color: #FFFFFF; /* White */
+            --primary-color: #263238; /* Dark Blue Grey - Near Black */
+            --primary-light: #455A64; /* Blue Grey - Lighter Primary for contrast */
+            --accent-color: #64B5F6; /* Light Blue - For highlights/links */
+            --background-color: #E0F2F7; /* Very light, elegant blue background */
+            --surface-color: #FFFFFF; /* White for the card */
             --text-color-primary: rgba(0, 0, 0, 0.87);
             --text-color-secondary: rgba(0, 0, 0, 0.60);
-            --shadow-elevation-1: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
-            --shadow-elevation-2: 0 4px 8px rgba(0, 0, 0, 0.16), 0 4px 8px rgba(0, 0, 0, 0.24);
+            --shadow-elevation-1: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.12);
+            --shadow-elevation-2: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.15);
         }
 
         body {
-            font-family: 'Overlock', cursive; /* Apply Overlock to all text */
+            font-family: 'Overlock', cursive;
             margin: 0;
             padding: 0;
-            background-color: var(--background-color);
+            background-color: var(--background-color); /* Updated background color here */
             color: var(--text-color-primary);
             line-height: 1.6;
             display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* --- Header --- */
-        header {
-            background-color: var(--primary-color);
-            color: var(--surface-color);
-            padding: 1rem 2rem;
-            box-shadow: var(--shadow-elevation-1);
-            display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            z-index: 10;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-            letter-spacing: 0.05em;
-            font-weight: 700;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        nav a {
-            color: var(--surface-color);
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
-        /* --- Main Content Area --- */
-        main {
-            flex-grow: 1;
-            padding: 2rem;
-            max-width: 960px;
-            margin: 2rem auto;
-        }
-
-        .card {
+        .profile-container {
             background-color: var(--surface-color);
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: var(--shadow-elevation-2);
-            padding: 2rem;
+            padding: 3rem;
+            max-width: 650px;
+            text-align: center;
+            margin: 1.5rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%; /* Make the container circular */
+            overflow: hidden; /* Hide parts of the image that go outside the circle */
             margin-bottom: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid var(--accent-color); /* Thinner, subtle blue border */
+            box-shadow: var(--shadow-elevation-1);
+            display: flex; /* Use flexbox to center image inside circular frame */
+            align-items: center;
+            justify-content: center;
+            margin-left: auto; /* Center the div itself */
+            margin-right: auto; /* Center the div itself */
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        .profile-photo img {
+            width: 100%; /* Make the image fill the circular container */
+            height: 100%;
+            object-fit: contain; /* IMPORTANT: Ensures the entire square icon is visible, fitting within the circle */
+            object-position: center; /* Center the image within its bounds */
         }
 
-        .card h2 {
+        h1 {
             color: var(--primary-color);
-            margin-top: 0;
-            font-size: 1.6rem;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
         }
 
-        .card p {
+        .tagline {
             color: var(--text-color-secondary);
-            font-size: 1rem;
-            line-height: 1.8;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
         }
 
-        .button {
-            display: inline-block;
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.8rem;
+            color: var(--text-color-primary);
+        }
+
+        .social-links {
+            margin-top: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
             background-color: var(--primary-color);
             color: var(--surface-color);
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
             text-decoration: none;
-            font-weight: 700;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            margin: 0 1rem;
             box-shadow: var(--shadow-elevation-1);
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
         }
 
-        .button:hover {
-            background-color: var(--primary-dark);
+        .social-links a:hover {
+            background-color: var(--primary-light);
+            transform: translateY(-4px);
             box-shadow: var(--shadow-elevation-2);
         }
 
-        /* --- Footer --- */
-        footer {
-            background-color: var(--primary-dark);
-            color: var(--surface-color);
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: auto; /* Pushes footer to the bottom */
-            font-size: 0.9rem;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        .social-links .material-icons {
+            font-size: 30px;
         }
 
-        footer a {
+        .contact-info {
+            font-size: 1rem;
+            color: var(--text-color-secondary);
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-info a {
             color: var(--accent-color);
             text-decoration: none;
+            font-weight: 700;
             transition: color 0.3s ease;
         }
 
-        footer a:hover {
-            color: var(--surface-color);
+        .contact-info a:hover {
+            color: var(--primary-color);
         }
 
-        /* --- Responsive Design --- */
+        .footer-logo {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-logo img {
+            height: 30px; /* Adjust size as needed for a "small footer type use" */
+            width: auto;
+            opacity: 0.7; /* Make it slightly subtle */
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-logo img:hover {
+            opacity: 1;
+        }
+
+        /* --- Responsive Adjustments --- */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 1rem;
-                text-align: center;
-            }
+            .profile-container { padding: 2rem; margin: 1rem; }
+            h1 { font-size: 2.2rem; }
+            .tagline { font-size: 1.1rem; }
+            .profile-photo { width: 120px; height: 120px; }
+            .social-links a { width: 45px; height: 45px; margin: 0 0.8rem; }
+            .social-links .material-icons { font-size: 26px; }
+            .footer-logo img { height: 25px; }
+        }
 
-            header h1 {
-                margin-bottom: 1rem;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            main {
-                padding: 1rem;
-                margin: 1rem auto;
-            }
-
-            .card {
-                padding: 1.5rem;
-            }
+        @media (max-width: 480px) {
+            .profile-container { padding: 1.5rem; }
+            h1 { font-size: 1.8rem; }
+            .tagline { font-size: 1rem; }
+            .profile-photo { width: 100px; height: 100px; }
+            .social-links a { width: 38px; height: 38px; margin: 0 0.6rem; }
+            .social-links .material-icons { font-size: 22px; }
+            .footer-logo img { height: 20px; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>My Personal Page</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="profile-container">
+        <div class="profile-photo">
+            <img src="https://static.amang.in/icon.png" alt="G. Aman Profile Icon">
+        </div>
 
-    <main>
-        <section id="about" class="card">
-            <h2>About Me</h2>
-            <p>
-                Welcome to my corner of the web! I'm **G. Aman**, a passionate individual exploring various facets of technology and creativity. This space is dedicated to sharing my journey, insights, and perhaps a few projects along the way.
-            </p>
-            <p>
-                I believe in continuous learning and the power of well-crafted solutions. Whether it's **server management**, web development, or exploring new tools, I'm always eager to dive deep and understand how things work.
-            </p>
-            <a href="#" class="button">Learn More</a>
-        </section>
+        <h1>G. Aman</h1>
+        <p class="tagline">Server Management | Web Development</p>
 
-        <section id="projects" class="card">
-            <h2>My Projects</h2>
-            <p>
-                Here are a few highlights of what I've been working on. Each project represents a unique challenge and learning opportunity.
-            </p>
-            <ul>
-                <li><strong>Project Alpha:</strong> A brief description of Project Alpha, what it does, and its main technologies.</li>
-                <li><strong>Project Beta:</strong> Another project, focusing on a different area or technology.</li>
-                <li><strong>Project Gamma:</strong> A smaller, experimental project showcasing a specific skill.</li>
-            </ul>
-            <a href="#" class="button">View All Projects</a>
-        </section>
+        <p>
+            A dedicated professional focused on efficient **server management** and crafting engaging web experiences. Exploring the synergy between robust backend systems and user-friendly front-end development.
+        </p>
+        <p>
+            Passionate about creating reliable and scalable solutions. Always eager to embrace new technologies and contribute to innovative projects.
+        </p>
 
-        <section id="contact" class="card">
-            <h2>Get in Touch</h2>
-            <p>
-                Have a question or just want to connect? Feel free to reach out. I'm always open to discussing new ideas and collaborations.
-            </p>
-            <p>
-                You can find me on <a href="#" style="color: var(--primary-color); text-decoration: underline;">LinkedIn</a> or send an email to <a href="mailto:your.email@example.com" style="color: var(--primary-color); text-decoration: underline;">your.email@example.com</a>.
-            </p>
-        </section>
-    </main>
+        <div class="social-links">
+            <a href="#" target="_blank" title="LinkedIn"><span class="material-icons">linkedin</span></a>
+            <a href="#" target="_blank" title="GitHub"><span class="material-icons">code</span></a>
+            <a href="#" target="_blank" title="Portfolio"><span class="material-icons">web</span></a>
+        </div>
 
-    <footer>
-        <p>&copy; 2025 G. Aman. All rights reserved.</p>
-        <p>Built with <span class="material-icons" style="font-size: 1rem; vertical-align: middle;">favorite</span> and a passion for clean design.</p>
-    </footer>
+        <div class="contact-info">
+            <p>Reach out:</p>
+            <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+        </div>
+
+        <div class="footer-logo">
+            <img src="https://static.amang.in/logo.png" alt="Amang.in Logo">
+        </div>
+    </div>
 </body>
 </html>
