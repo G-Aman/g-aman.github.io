@@ -1,212 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G. Aman - Profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Overlock:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #263238; /* Dark Blue Grey - Near Black */
-            --primary-light: #455A64; /* Blue Grey - Lighter Primary for contrast */
-            --accent-color: #64B5F6; /* Light Blue - For highlights/links */
-            --background-color: #E0F2F7; /* Very light, elegant blue background */
-            --surface-color: #FFFFFF; /* White for the card */
-            --text-color-primary: rgba(0, 0, 0, 0.87);
-            --text-color-secondary: rgba(0, 0, 0, 0.60);
-            --shadow-elevation-1: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.12);
-            --shadow-elevation-2: 0 4px 8px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.15);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>G. Aman - Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Overlock:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary-color: #64B5F6; /* Light Blue */
+      --primary-dark: #1E88E5;
+      --background-gradient: linear-gradient(to bottom right, #121212, #1E1E1E);
+      --surface-color: #212121; /* Dark surface */
+      --text-color-primary: #FFFFFF;
+      --text-color-secondary: rgba(255, 255, 255, 0.7);
+      --shadow-elevation-1: 0 2px 4px rgba(0, 0, 0, 0.6);
+      --shadow-elevation-2: 0 6px 12px rgba(0, 0, 0, 0.8);
+    }
 
-        body {
-            font-family: 'Overlock', cursive;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color); /* Updated background color here */
-            color: var(--text-color-primary);
-            line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
+    body {
+      font-family: 'Overlock', cursive;
+      margin: 0;
+      padding: 0;
+      background: var(--background-gradient);
+      color: var(--text-color-primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
 
-        .profile-container {
-            background-color: var(--surface-color);
-            border-radius: 12px;
-            box-shadow: var(--shadow-elevation-2);
-            padding: 3rem;
-            max-width: 650px;
-            text-align: center;
-            margin: 1.5rem;
-            animation: fadeIn 1s ease-out;
-        }
+    .profile-container {
+      background-color: var(--surface-color);
+      border-radius: 12px;
+      box-shadow: var(--shadow-elevation-2);
+      padding: 3rem;
+      max-width: 650px;
+      text-align: center;
+      margin: 1.5rem;
+      animation: fadeIn 0.8s ease-out;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        .profile-photo {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%; /* Make the container circular */
-            overflow: hidden; /* Hide parts of the image that go outside the circle */
-            margin-bottom: 2rem;
-            border: 2px solid var(--accent-color); /* Thinner, subtle blue border */
-            box-shadow: var(--shadow-elevation-1);
-            display: flex; /* Use flexbox to center image inside circular frame */
-            align-items: center;
-            justify-content: center;
-            margin-left: auto; /* Center the div itself */
-            margin-right: auto; /* Center the div itself */
-        }
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      border: 2px solid var(--primary-color);
+      box-shadow: var(--shadow-elevation-1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-        .profile-photo img {
-            width: 100%; /* Make the image fill the circular container */
-            height: 100%;
-            object-fit: contain; /* IMPORTANT: Ensures the entire square icon is visible, fitting within the circle */
-            object-position: center; /* Center the image within its bounds */
-        }
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
 
-        h1 {
-            color: var(--primary-color);
-            font-size: 2.8rem;
-            margin-bottom: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.03em;
-        }
+    h1 {
+      color: var(--primary-color);
+      font-size: 2.8rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
 
-        .tagline {
-            color: var(--text-color-secondary);
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-        }
+    .tagline {
+      color: var(--text-color-secondary);
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+    }
 
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 1.8rem;
-            color: var(--text-color-primary);
-        }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.8rem;
+      color: var(--text-color-secondary);
+    }
 
-        .social-links {
-            margin-top: 2.5rem;
-            margin-bottom: 2rem;
-        }
+    .social-links {
+      margin-top: 2.5rem;
+      margin-bottom: 2rem;
+    }
 
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: var(--surface-color);
-            text-decoration: none;
-            margin: 0 1rem;
-            box-shadow: var(--shadow-elevation-1);
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-        }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background-color: var(--primary-color);
+      color: var(--surface-color);
+      text-decoration: none;
+      margin: 0 1rem;
+      box-shadow: var(--shadow-elevation-1);
+      transition: all 0.3s ease;
+    }
 
-        .social-links a:hover {
-            background-color: var(--primary-light);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-elevation-2);
-        }
+    .social-links a:hover {
+      background-color: var(--primary-dark);
+      transform: scale(1.1);
+      box-shadow: var(--shadow-elevation-2);
+    }
 
-        .social-links .material-icons {
-            font-size: 30px;
-        }
+    .social-links .material-icons {
+      font-size: 28px;
+    }
 
-        .contact-info {
-            font-size: 1rem;
-            color: var(--text-color-secondary);
-            margin-top: 2.5rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.08);
-        }
+    .footer-logo {
+      margin-top: 2rem;
+      text-align: center;
+    }
 
-        .contact-info a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 700;
-            transition: color 0.3s ease;
-        }
+    .footer-logo img {
+      height: 30px;
+      width: auto;
+      opacity: 0.75;
+      transition: opacity 0.3s ease;
+    }
 
-        .contact-info a:hover {
-            color: var(--primary-color);
-        }
+    .footer-logo img:hover {
+      opacity: 1;
+    }
 
-        .footer-logo {
-            margin-top: 2rem;
-            text-align: center;
-        }
+    @media (max-width: 768px) {
+      .profile-container { padding: 2rem; margin: 1rem; }
+      h1 { font-size: 2.2rem; }
+      .tagline { font-size: 1.1rem; }
+      .profile-photo { width: 120px; height: 120px; }
+      .social-links a { width: 45px; height: 45px; margin: 0 0.8rem; }
+      .social-links .material-icons { font-size: 26px; }
+      .footer-logo img { height: 25px; }
+    }
 
-        .footer-logo img {
-            height: 30px; /* Adjust size as needed for a "small footer type use" */
-            width: auto;
-            opacity: 0.7; /* Make it slightly subtle */
-            transition: opacity 0.3s ease;
-        }
-
-        .footer-logo img:hover {
-            opacity: 1;
-        }
-
-        /* --- Responsive Adjustments --- */
-        @media (max-width: 768px) {
-            .profile-container { padding: 2rem; margin: 1rem; }
-            h1 { font-size: 2.2rem; }
-            .tagline { font-size: 1.1rem; }
-            .profile-photo { width: 120px; height: 120px; }
-            .social-links a { width: 45px; height: 45px; margin: 0 0.8rem; }
-            .social-links .material-icons { font-size: 26px; }
-            .footer-logo img { height: 25px; }
-        }
-
-        @media (max-width: 480px) {
-            .profile-container { padding: 1.5rem; }
-            h1 { font-size: 1.8rem; }
-            .tagline { font-size: 1rem; }
-            .profile-photo { width: 100px; height: 100px; }
-            .social-links a { width: 38px; height: 38px; margin: 0 0.6rem; }
-            .social-links .material-icons { font-size: 22px; }
-            .footer-logo img { height: 20px; }
-        }
-    </style>
+    @media (max-width: 480px) {
+      .profile-container { padding: 1.5rem; }
+      h1 { font-size: 1.8rem; }
+      .tagline { font-size: 1rem; }
+      .profile-photo { width: 100px; height: 100px; }
+      .social-links a { width: 38px; height: 38px; margin: 0 0.6rem; }
+      .social-links .material-icons { font-size: 22px; }
+      .footer-logo img { height: 20px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="profile-container">
-        <div class="profile-photo">
-            <img src="https://static.amang.in/icon.png" alt="G. Aman Profile Icon">
-        </div>
-
-        <h1>G. Aman</h1>
-        <p class="tagline">Server Management | Web Development</p>
-
-        <p>
-            A dedicated professional focused on efficient **server management** and crafting engaging web experiences. Exploring the synergy between robust backend systems and user-friendly front-end development.
-        </p>
-        <p>
-            Passionate about creating reliable and scalable solutions. Always eager to embrace new technologies and contribute to innovative projects.
-        </p>
-
-        <div class="social-links">
-            <a href="#" target="_blank" title="LinkedIn"><span class="material-icons">linkedin</span></a>
-            <a href="#" target="_blank" title="GitHub"><span class="material-icons">code</span></a>
-            <a href="#" target="_blank" title="Portfolio"><span class="material-icons">web</span></a>
-        </div>
-
-        <div class="contact-info">
-
-        </div>
-
-        <div class="footer-logo">
-            <img src="https://static.amang.in/logo.png" alt="Amang.in Logo">
-        </div>
+  <div class="profile-container">
+    <div class="profile-photo">
+      <img src="https://static.amang.in/icon.png" alt="G. Aman Profile Icon" />
     </div>
+
+    <h1>G. Aman</h1>
+    <p class="tagline">Server Management | Web Development</p>
+
+    <p>
+      A dedicated professional focused on efficient <strong>server management</strong> and crafting engaging web experiences. Exploring the synergy between robust backend systems and user-friendly front-end development.
+    </p>
+    <p>
+      Passionate about creating reliable and scalable solutions. Always eager to embrace new technologies and contribute to innovative projects.
+    </p>
+
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+        <span class="material-icons">business</span>
+      </a>
+      <a href="https://github.com/yourusername" target="_blank" title="GitHub">
+        <span class="material-icons">code</span>
+      </a>
+      <a href="https://yourportfolio.com" target="_blank" title="Portfolio">
+        <span class="material-icons">language</span>
+      </a>
+    </div>
+
+    <div class="footer-logo">
+      <img src="https://static.amang.in/logo.png" alt="Amang.in Logo" />
+    </div>
+  </div>
 </body>
 </html>
